@@ -1,0 +1,19 @@
+{
+    "name": "alexberce/docker-env",
+    "type": "library",
+    "description": "Docker environment",
+    "keywords": ["docker", "php"],
+    "homepage": "https://github.com/alexberce/docker-env",
+    "license": "MIT",
+    "require": {
+    },
+    "require-dev": {
+    },
+    "autoload": {
+    },
+    "extra": {
+    },
+    "scripts": {
+        "serve": "php -S 0.0.0.0:8080 -t public/ public/index.php"
+    }
+}
