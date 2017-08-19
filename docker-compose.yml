@@ -11,8 +11,6 @@ services:
         - ./.env
     ports:
         - 8888:80
-    deploy:
-          replicas: 2
     volumes:
         - ./app/:/var/www
         - ./config/docker/apache/etc/apache2/sites-available:/etc/apache2/sites-available
@@ -24,18 +22,18 @@ services:
     env_file:
         - ./.env
     volumes:
-#      - ./app/storage/redis:/data
+      - ./app/storage/redis:/data
       - ./config/docker/redis/redis.conf:/usr/local/etc/redis/redis.conf
 
   db:
     build: ./config/docker/mysql
     container_name: mysql
     volumes:
-#      - ./app/storage/mysql:/var/lib/mysql
+      - ./app/storage/mysql:/var/lib/mysql
       - ./config/docker/mysql/conf.d:/etc/mysql/conf.d
-#      - ./app/storage/logs/mysql:/var/log/mysql
+      - ./app/storage/logs/mysql:/var/log/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=secret
       - MYSQL_DATABASE=dockerApp
     ports:
-      - "3306:3306"
+      - "33061:3306"
