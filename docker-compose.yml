@@ -28,12 +28,11 @@ services:
   db:
     build: ./config/docker/mysql
     container_name: mysql
+    env_file:
+      - ./.env
     volumes:
       - ./app/storage/mysql:/var/lib/mysql
       - ./config/docker/mysql/conf.d:/etc/mysql/conf.d
       - ./app/storage/logs/mysql:/var/log/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=secret
-      - MYSQL_DATABASE=dockerApp
     ports:
       - "33061:3306"
