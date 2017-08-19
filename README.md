@@ -4,6 +4,8 @@ A Docker PHP development environment that facilitates running PHP applications o
 
 ## Prerequisites
 
+   - git
+   - composer
    - docker
    - docker-compose
 
