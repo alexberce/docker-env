@@ -5,13 +5,10 @@
     "keywords": ["docker", "php"],
     "homepage": "https://github.com/alexberce/docker-env",
     "license": "MIT",
-    "require": {
-    },
-    "require-dev": {
-    },
     "autoload": {
-    },
-    "extra": {
+        "psr-4": {
+            "Invobox\\Template\\": "src/"
+        }
     },
     "scripts": {
         "serve": "php -S 0.0.0.0:8080 -t public/ public/index.php"
